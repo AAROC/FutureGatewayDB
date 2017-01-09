@@ -1,0 +1,18 @@
+version: "2"
+services:
+  db:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=changeme
+      - MYSQL_USER=fgapi
+      - MYSQL_DATABASE=fgapi
+    entrypoint: ["/entrypoint.sh"]
+    command: ["mysqld"]
+
+registries: {}
+  # Add optional registries used for deployment. For example:
+  #  google:
+  #    url: https://gcr.io
+  #    namespace: my-cool-project-xxxxxx
